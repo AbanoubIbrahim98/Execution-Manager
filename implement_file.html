@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>فتح ملف تنفيذ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f3f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .btn-confirm {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-confirm:hover {
+            background-color: #0056b3;
+        }
+
+        .modal-header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+        }
+
+        .modal-body {
+            text-align: center;
+        }
+
+        /* Adding extra custom styles for images and layout as per your design */
+        .imgaya {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .navaya {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .notification {
+            position: relative;
+        }
+
+        .notification-text {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .navbar-text p {
+            font-size: 18px;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h2>فتح ملف تنفيذ</h2>
+            <p>الرقم الآلي للقضية: 9675343</p>
+        </div>
+
+        <!-- Form Section -->
+        <form id="execution-form">
+            <div class="form-group">
+                <label for="open-date">تاريخ فتح الملف</label>
+                <input type="date" id="open-date" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="region">المحافظة</label>
+                <select id="region" class="form-control">
+                    <option value="capital">العاصمة</option>
+                    <option value="hawally">حولي</option>
+                    <option value="mangaf">المباركية</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="section">القسم المنشئ للملف</label>
+                <select id="section" class="form-control">
+                    <option value="capital-execution">إدارة تنفيذ العاصمة</option>
+                    <option value="hawally-execution">إدارة تنفيذ حولي</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="file-number">رقم الملف</label>
+                <input type="text" id="file-number" class="form-control" value="976324" disabled>
+            </div>
+
+            <button type="button" class="btn-confirm" data-bs-toggle="modal" data-bs-target="#confirmModal">تأكيد فتح ملف تنفيذ</button>
+        </form>
+    </div>
+
+    <!-- Modal Section -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">تأكيد فتح ملف التنفيذ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>هل أنت متأكد من فتح الملف للتنفيذ؟</p>
+                    <button class="btn-confirm" id="confirm-execution">نعم، فتح ملف تنفيذ</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">لا، رجوع</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer text-center mt-4">
+        <p>جميع الحقوق محفوظة لـ الإدارة العامة للتنفيذ © 2023</p>
+        <p>في إدارة تطوير النظم - وزارة العدل</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        // Modal confirmation and redirection
+        document.getElementById('confirm-execution').addEventListener('click', function () {
+            alert('تم فتح الملف بنجاح!');
+            window.location.href = 'index.html'; // Redirect to the index page after confirmation
+        });
+    </script>
+
+</body>
+
+</html>
